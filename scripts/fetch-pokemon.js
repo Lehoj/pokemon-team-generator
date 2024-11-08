@@ -7,9 +7,7 @@ async function fetchRandomPokemon(pokemonCount, startId, endId, pokemonShinyBool
     const randomPokemonIds = generateRandomPokemonIdsInRange(pokemonCount, startId, endId);
     const pokemonShiny = pokemonShinyBoolean;
 
-    let onlyEvolved = false;
-
-    //let idsInRange = Array.from({ length: endId - startId + 1 }, (_, i) => i + startId); console.log(idsInRange);
+    //let onlyEvolved = false;
 
     // Fetch each Pokémon by ID concurrently
     try {
@@ -38,10 +36,10 @@ async function fetchRandomPokemon(pokemonCount, startId, endId, pokemonShinyBool
             console.log(pokemonNames);
         }); */
 
-        if(onlyEvolved == true) {
+        /* if(onlyEvolved == true) {
             console.log('onlyEvolved condition works!');
             fetchOnlyEvolvedPokemon(fetchPromises);
-        }
+        } */
 
         // Display the fetched Pokémon data
         displayPokemon(pokemonData, pokemonShiny);
@@ -51,7 +49,7 @@ async function fetchRandomPokemon(pokemonCount, startId, endId, pokemonShinyBool
     }
 }
 
-async function fetchOnlyEvolvedPokemon(fetchPromises) {
+/* async function fetchOnlyEvolvedPokemon(fetchPromises) {
     let pokemonDataFinal = [];
 
     const speciesDataArray = await Promise.allSettled(fetchPromises); console.log('Species: ' + speciesDataArray);
@@ -68,7 +66,7 @@ async function fetchOnlyEvolvedPokemon(fetchPromises) {
     
     pokemonDataFinal.push(...evolvedPokemonData);
     
-    console.log('Evolved: ' + evolvedPokemonData);
+    console.log('Evolved: ' + evolvedPokemonData); */
 
     // Fetch species data in parallel to determine fully evolved status
 /*         const evolvedPokemonPromises = pokemonData.map(async pokemon => {
@@ -87,7 +85,7 @@ async function fetchOnlyEvolvedPokemon(fetchPromises) {
     });
 
     // Filter out null values for non-evolved Pokémon
-    const evolvedPokemonData = (await Promise.all(evolvedPokemonPromises)).filter(pokemon => pokemon); */
+    const evolvedPokemonData = (await Promise.all(evolvedPokemonPromises)).filter(pokemon => pokemon);
 
     // Display evolved Pokémon data
     //displayPokemon(evolvedPokemonData);
@@ -95,13 +93,13 @@ async function fetchOnlyEvolvedPokemon(fetchPromises) {
     displayPokemon(evolvedPokemonData);
 }
 
-function isFullyEvolved(speciesData) {
+/* function isFullyEvolved(speciesData) {
     if (!speciesData.evolution_chain) return false;
 
     // Check if there are no further evolutions
     const evolvesTo = speciesData.evolution_chain.evolves_to;
     return !evolvesTo || evolvesTo.length === 0;
-}
+} */
 
 function generateRandomPokemonIdsInRange(pokemonCount, startId, endId) {
     const idsInRange = Array.from({ length: endId - startId + 1 }, (_, i) => i + startId);

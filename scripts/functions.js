@@ -1,3 +1,5 @@
+// Zatial sa nepouziva
+
 console.log('functions.js works!');
 
 let allPokemons = [];
