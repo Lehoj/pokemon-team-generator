@@ -1,4 +1,4 @@
-An app that randomly generates Pokémon for your team.
+An app that generates random Pokémon for your team.
 
 <b>How to run the app:</b>
 1. Open the project's folder;
