@@ -1,11 +1,6 @@
 import './style.css';
 import 'animate.css';
 
-// Import the CSS
-//import 'bootstrap/dist/css/bootstrap.min.css';
-// Import JavaScript components (optional, if you need Bootstrap’s JS)
-//import 'bootstrap';
-
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="">
@@ -15,7 +10,7 @@ document.querySelector('#app').innerHTML = `
     <h2>Pokemon Team Generator</h2>
 
     <div class="form-container">
-        <form class="form" id="pokemonInfoForm">
+        <form class="form" id="mainForm">
             <label>Pokémon Count (6 is a full party)</label>
               <select id="pokemonCount">
                 <option value=1>1</option>
@@ -40,8 +35,14 @@ document.querySelector('#app').innerHTML = `
                 <option value=906,1025>Paldea</option>
               </select>
 
+            <!--<label>Fully evolved</label>
+              <select id="pokemonIsEvolved">
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+              </select>-->
+
             <label>Shiny</label>
-              <select id="pokemonShiny">
+              <select id="pokemonIsShiny">
                 <option value=0>No</option>
                 <option value=1>Yes</option>
               </select>

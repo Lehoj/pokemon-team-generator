@@ -1,3 +1,11 @@
+/* * {
+  outline: 2px solid black;
+}*/
+
+body, html {
+  margin: 0;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -82,7 +90,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* My own CSS */
+/* My CSS */
 
 /* Centering the form and setting size */
 .form-container {

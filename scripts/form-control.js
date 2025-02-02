@@ -1,20 +1,18 @@
-console.log('form-control.js works!');
-
-const pokemonGenerateForm = document.getElementById('pokemonInfoForm');
-// Ak je tu, berie iba prvy select a nic ine
-//const pokemonGenerationSelect = document.getElementById("pokemonGeneration").value.split(",");
+const mainForm = document.getElementById('mainForm');
 const pokemonCountSelect = document.getElementById("pokemonCount");
-const pokemonShininess = document.getElementById("pokemonShiny");
+//const pokemonEvolvedSelect = document.getElementById("pokemonIsEvolved");
+const pokemonShinySelect = document.getElementById("pokemonIsShiny");
 
-pokemonGenerateForm.addEventListener('submit', (event) => {
-	event.preventDefault(); console.log('Submit works!');
-    // Ak je tu, berie vsetky selecty a ich hodnoty
+mainForm.addEventListener('submit', (event) => {
+	event.preventDefault();
+    
     const pokemonGenerationSelect = document.getElementById("pokemonGeneration").value.split(",");
 
-    const pokemonCount = pokemonCountSelect.value;
-    const startId = parseInt(pokemonGenerationSelect[0]); console.log('Start id: ' + startId);
-    const endId = parseInt(pokemonGenerationSelect[1]); console.log('End id: ' + endId);
-    const pokemonShinyBoolean = pokemonShininess.value;
+    const pokemonFinalCount = pokemonCountSelect.value;
+    const startId = parseInt(pokemonGenerationSelect[0]);
+    const endId = parseInt(pokemonGenerationSelect[1]);
+    //const pokemonIsEvolved = pokemonEvolvedSelect.value;
+    const pokemonIsShiny = pokemonShinySelect.value;
 
-    fetchRandomPokemon(pokemonCount, startId, endId, pokemonShinyBoolean);
+    generateRandomPokemon(pokemonFinalCount, startId, endId, pokemonIsShiny); // pokemonIsEvolved
 });
