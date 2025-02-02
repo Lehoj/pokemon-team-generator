@@ -1,4 +1,4 @@
-An app that generates random Pokémon for your team.
+A simple app created in vanilla JS that generates random Pokémon for your team.
 
 Choose between 1 to 6 Pokémon and customize your selection by specifying a generation or including all existing Pokémon. You can also toggle their shininess.
 
